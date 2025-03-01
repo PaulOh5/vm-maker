@@ -1,51 +1,16 @@
-# My Go Project
+# Simple VM Maker
 
-This is a simple Go web application that uses the Fiber framework to set up a web server.
+This is a simple Virtual Machine maker application built with Go. It is a API that allows users to create and manager virtual machines.
+- The application is built based on the [cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor)
 
 ## Prerequisites
 
-- Go 1.16 or later
-- A working Go environment
-
-## Getting Started
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone <repository-url>
-   cd my-vm-maker
+- Go 1.23.2
+- linux kernel 3.0 or later for using kvm
+    - check if your system supports kvm by running the following command:
+    ```bash
+    lsmod | grep kvm
    ```
-
-2. **Install dependencies:**
-
-   Navigate to the project directory and run:
-
-   ```bash
-   go mod tidy
-   ```
-
-3. **Run the application:**
-
-   Execute the following command to start the server:
-
-   ```bash
-   go run src/main.go
-   ```
-
-4. **Access the application:**
-
-   Open your web browser and go to `http://localhost:3000`. You should see "Hello, World!" displayed on the page.
-
-## Project Structure
-
-```
-my-vm-maker
-├── src
-│   ├── main.go        # Entry point of the application
-├── go.mod             # Module definition and dependencies
-└── README.md          # Project documentation
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- cloud-hypervisor installed on your system
+  - Go to the [cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor/releases/) and donwload the `cloud-hypervisor`
+  - Move the `cloud-hypervisor` to the `/usr/local/bin` directory (or any other directory and modify the `CLOUD_HYPERVISOR_BIN_PATH` in the `.env` file)
