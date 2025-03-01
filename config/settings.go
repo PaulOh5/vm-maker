@@ -37,7 +37,7 @@ func SetupSettings() Settings {
 		BinPathBook: BinPathBook{
 			Mkdosfs:         isAccessibel(getEnv("MKDOSFS_BIN_PATH", "/usr/sbin/mkdosfs")),
 			Mcopy:           isAccessibel(getEnv("MCOPY_BIN_PATH", "/usr/bin/mcopy")),
-			CloudHyperVisor: isAccessibel(getEnv("CLOUD_HYPERVISOR_BIN_PATH", "/opt/vm-maker/cloud-hypervisor")),
+			CloudHyperVisor: isAccessibel(getEnv("CLOUD_HYPERVISOR_BIN_PATH", "/usr/local/bin/cloud-hypervisor")),
 		},
 	}
 
